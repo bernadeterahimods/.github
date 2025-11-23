@@ -1,1 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BX Consultoria</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bx-bg: #F5F5F7;
+        --bx-bg-dark: #022B3A;
+        --bx-primary: #1F7A8C;
+        --bx-accent: #F4A261;
+        --bx-chip: #BFDBF7;
+        --bx-text: #222222;
+        --bx-muted: #666666;
+        --bx-radius: 14px;
+        --bx-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      }
 
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        background-color: var(--bx-bg);
+        color: var(--bx-text);
+        margin: 0;
+        padding: 0;
+      }
+
+      .bx-page {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 40px 20px 80px;
+      }
+
+      .bx-hero {
+        background: linear-gradient(135deg, var(--bx-bg-dark), #03506F);
+        color: #fff;
+        border-radius: 24px;
+        padding: 40px 32px;
+        box-shadow: var(--bx-shadow);
+        margin-bottom: 40px;
+      }
+
+      .bx-hero-title {
+        font-size: 2.4rem;
+        margin: 0 0 10px;
+        font-weight: 700;
+      }
+
+      .bx-hero-sub {
+        font-size: 1.1rem;
+        margin: 0 0 24px;
+        max-width: 620px;
+        line-height: 1.5;
+        opacity: 0.9;
+      }
+
+      .bx-hero-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+
+      .bx-chip {
+        background-color: rgba(191, 219, 247, 0.2);
+        color: #EAF4FF;
+        border: 1px solid rgba(191, 219, 247, 0.5);
+        border-radius: 999px;
+        padding: 4px 12px;
+        font-size: 0.8rem;
+      }
+
+      .bx-cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .bx-btn-primary {
+        background-color: var(--bx-accent);
+        color: #fff;
+        border-radius: 999px;
+        padding: 10px 22px;
+        font-weight: 600;
+        text-decoration: none;
+        border: none;
+        display: inline-block;
+        transition: background-color 0.2s;
+        cursor: pointer;
+      }
+
+      .bx-btn-primary:hover {
+        background-color: #e68d3d;
+      }
+
+      .bx-btn-ghost {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: #fff;
+        border-radius: 999px;
+        padding: 10px 22px;
+        text-decoration: none;
+        transition: background-color 0.2s;
+        cursor: pointer;
+      }
+
+      .bx-btn-ghost:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .bx-section {
+        background-color: #fff;
+        border-radius: var(--bx-radius);
+        padding: 32px 28px;
+        box-shadow: var(--bx-shadow);
+        margin-bottom: 30px;
+      }
+
+      .bx-section-title {
+        font-size: 1.6rem;
+        margin-top: 0;
+        margin-bottom: 12px;
+        color: var(--bx-primary);
+        font-weight: 700;
+      }
+
+      .bx-section-kicker {
+        text-transform: uppercase;
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        color: var(--bx-muted);
+        margin-bottom: 4px;
+      }
+
+      .bx-grid-2 {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        gap: 28px;
+      }
+
+      .bx-p {
+        margin-top: 0;
+        margin-bottom: 14px;
+        line-height: 1.6;
+        color: var(--bx-text);
+      }
+
+      .bx-list {
+        padding-left: 18px;
+        margin-top: 0;
+        margin-bottom: 14px;
+        line-height: 1.6;
+      }
+      
+      .bx-list li {
+        margin-bottom: 6px;
+      }
+
+      .bx-pill-label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--bx-muted);
+        margin-bottom: 12px;
+        font-weight: 600;
+      }
+
+      .bx-card {
+        background-color: var(--bx-bg);
+        border-radius: 12px;
+        padding: 16px 18px;
+        margin-bottom: 12px;
+      }
+
+      .bx-card-title {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: var(--bx-primary);
+      }
+
+      .bx-highlight {
+        background: var(--bx-chip);
+        padding: 16px 20px;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        color: #003366;
+        font-weight: 500;
+        line-height: 1.5;
+      }
+
+      .bx-kpi-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-top: 16px;
+      }
+
+      .bx-kpi {
+        background: #fff;
+        border-radius: 14px;
+        padding: 14px 16px;
+        box-shadow: var(--bx-shadow);
+        flex: 1 1 140px;
+        border: 1px solid #eee;
+      }
+
+      .bx-kpi span {
+        display: block;
+      }
+
+      .bx-kpi-value {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--bx-primary);
+        margin-bottom: 4px;
+      }
+
+      .bx-kpi-label {
+        font-size: 0.85rem;
+        color: var(--bx-muted);
+        line-height: 1.3;
+      }
+
+      .bx-footer-note {
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--bx-muted);
+        margin-top: 40px;
+      }
+      
+      .bx-footer-note a {
+        color: var(--bx-primary);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      /* Animations & Loading */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .animate-fade-in {
+        animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      .bx-loading-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 60vh;
+      }
+
+      .bx-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(31, 122, 140, 0.15);
+        border-radius: 50%;
+        border-top-color: var(--bx-primary);
+        animation: spin 0.8s ease-in-out infinite;
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+
+      /* Responsivo */
+      @media (max-width: 768px) {
+        .bx-hero {
+          padding: 28px 22px;
+        }
+        .bx-hero-title {
+          font-size: 2rem;
+        }
+        .bx-grid-2 {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
